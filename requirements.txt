@@ -4,3 +4,9 @@ robotframework-seleniumlibrary
 robotframework-requests
 robotframework-databaselibrary
 robotframework-jsonlibrary
+allure-robotframework
+selenium
+chromedriver-autoinstaller
+robotframework-pythonlibcore
+Pygments
+requests
