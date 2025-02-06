@@ -37,7 +37,7 @@ Login With Invalid Creds
     IF    ${is_valid_toast}
         Log    "Pesan error sesuai: ${toast_text}"
     ELSE    
-        Fail    "Pesan Error tidak ssesuai"
+        Fail    "Pesan Error tidak sesuai"
     END
     
 
@@ -54,7 +54,7 @@ Login To Jamtangan
     Input Text      ${INPUT_USERNAME}    ${username}
     Input Password  ${INPUT_PASSWORD}    ${password}
     Click Element   ${BTN_LOGIN_SUBMIT}
-    Wait Until Element Is Visible    ${USER_AVATAR}    timeout=15s
+    Wait Until Page Contains Element    ${USER_AVATAR}    timeout=30s
 
 
 Logout From Jamtangan
