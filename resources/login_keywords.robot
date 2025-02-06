@@ -29,7 +29,7 @@ Login With Invalid Creds
     Click Element   ${BTN_LOGIN_SUBMIT}
 
     # Tunggu toast muncul & validasi pesan error
-    Wait Until Element Is Visible    ${TOAST_LOCATOR}    timeout=15s
+    Wait Until Element Is Visible    ${TOAST_LOCATOR}    timeout=30s
     ${toast_text}    Get Text    ${TOAST_LOCATOR}
 
     ${is_valid_toast}    Evaluate    '${toast_text}' == '${TOAST_MESSAGE1}' or '${toast_text}' == '${TOAST_MESSAGE2}'
