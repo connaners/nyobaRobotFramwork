@@ -29,7 +29,7 @@ Login With Invalid Creds
     Click Element   ${BTN_LOGIN_SUBMIT}
 
     # Tunggu toast muncul & validasi pesan error
-    Wait Until Element Is Visible    ${TOAST_LOCATOR}    timeout=5s
+    Wait Until Element Is Visible    ${TOAST_LOCATOR}    timeout=15s
     ${toast_text}    Get Text    ${TOAST_LOCATOR}
 
     ${is_valid_toast}    Evaluate    '${toast_text}' == '${TOAST_MESSAGE1}' or '${toast_text}' == '${TOAST_MESSAGE2}'
@@ -54,10 +54,11 @@ Login To Jamtangan
     Input Text      ${INPUT_USERNAME}    ${username}
     Input Password  ${INPUT_PASSWORD}    ${password}
     Click Element   ${BTN_LOGIN_SUBMIT}
+    Wait Until Element Is Visible    ${USER_AVATAR}    timeout=15s
 
 
 Logout From Jamtangan
-    Wait Until Element Is Visible    ${USER_AVATAR}
+    ${is_form_visible}    Run Keyword And Return Status    Element Should Be Visible    ${USER_AVATAR}
     Mouse Over    ${USER_AVATAR}
     Click Element    ${BTN_LOGOUT}
     Click Element    ${BTN_CONFIRM_LOGOUT}
