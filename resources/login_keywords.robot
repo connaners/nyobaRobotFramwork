@@ -7,8 +7,9 @@ Resource    ../resources/test_data.robot
 Open Browser To Login Page
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
+    Scroll Element Into View    ${BTN_LOGIN}
     Wait Until Element Is Visible    ${closePopUpNotif}
-    Click Button    ${closePopUpNotif}
+    Run Keyword And Ignore Error    Click Element    ${closePopUpNotif}
     Wait Until Element Is Visible    ${BTN_UTAMA}
     Click Element    ${BTN_UTAMA}
 
