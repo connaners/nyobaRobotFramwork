@@ -54,7 +54,8 @@ Login To Jamtangan
     Input Text      ${INPUT_USERNAME}    ${username}
     Input Password  ${INPUT_PASSWORD}    ${password}
     Click Element   ${BTN_LOGIN_SUBMIT}
-    Wait Until Page Contains Element    ${USER_AVATAR}    timeout=30s
+    # Wait Until Page Contains Element    ${USER_AVATAR}    timeout=30s
+    Wait Until Element Is Not Visible    ${BTN_REGISTER}    timeout=30s
 
 
 Logout From Jamtangan
