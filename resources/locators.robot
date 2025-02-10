@@ -1,6 +1,7 @@
 *** Variables ***
 ${URL}                   https://www.jamtangan.com/
 ${BROWSER}               Chrome
+${closePopUpNotif}       id=moe-dontallow_button
 ${BTN_UTAMA}             xpath=//button[@data-test-id='button-primary']
 ${BTN_LOGIN}             id=login-button
 ${BTN_REGISTER}          xpath=//button[normalize-space()='Daftar']
@@ -14,6 +15,7 @@ ${LOGIN_FORM}            xpath=//div[@data-testid='login-form']
 ${TOAST_LOCATOR}         xpath=//div[contains(@class, 'mw-snackbar') and contains(@class, 'is-visible')]
 ${TOAST_MESSAGE1}        Ups, email atau password kamu salah
 ${TOAST_MESSAGE2}        Ups, akun ini belum terdaftar
+${TOAST_MESSAGE3}        Failed to fetch
 # ${LOGIN_FORM}            xpath=//div[contains(@class, 'login-form-popup')]//div[contains(text(), 'Masuk')]
 
 
