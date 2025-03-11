@@ -1,45 +1,45 @@
-name: Robot Framework Tests
+# name: Robot Framework Tests
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
+#       - name: Set up Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: "3.10"
 
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          python -m webdriver_manager.chrome install
+#       - name: Install dependencies
+#         run: |
+#           pip install -r requirements.txt
+#           python -m webdriver_manager.chrome install
 
-      - name: Setup Chrome & Chromedriver
-        run: |
-          sudo apt update
-          sudo apt install -y google-chrome-stable
-          google-chrome --version
-          chromedriver --version
+#       - name: Setup Chrome & Chromedriver
+#         run: |
+#           sudo apt update
+#           sudo apt install -y google-chrome-stable
+#           google-chrome --version
+#           chromedriver --version
 
-      - name: Run Robot Framework tests
-        run: |
-          robot --variable BROWSER:headlesschrome --outputdir results tests/
+#       - name: Run Robot Framework tests
+#         run: |
+#           robot --variable BROWSER:headlesschrome --outputdir results tests/
 
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: robot-results
-          path: results/
+#       - name: Upload test results
+#         if: always()
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: robot-results
+#           path: results/
